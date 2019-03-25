@@ -6,20 +6,18 @@ end
 
 def summon_captain_planet(planeteer_calls)
     planeteer_calls.map do |call|
-      call.capitalize + '!'
+      call.capitalize << '!'
     end
 end
 
 def long_planeteer_calls(planeteer_calls)
-    planeteer_calls.any? do |call|
-      call.length > 4
-    end
+    planeteer_calls.any? { |word| word.length > 4 ? true : false }
 end
 
-def find_the_cheese(cheesey_things)
+def find_the_cheese(cheese_strings)
     cheese_types = ["cheddar", "gouda", "camembert"]
 
-    cheesey_things.find do |any_cheese_here|
-    cheese_types.include?(any_cheese_here)
+    cheese_strings.find do |cheese_please|
+    cheese_types.include?(cheese_please)
     end
 end
